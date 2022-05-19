@@ -1,0 +1,135 @@
+:root {
+    --colorOrng: #f6531c;
+    --colorPnk: #e64d59;
+    --colorBlck: rgba(17, 10, 12, 0.89);
+}
+body {
+    background: #dac4bc;
+}
+header {
+    height: 220px;
+    background: #e64d59 url("../images/logo.png") no-repeat;
+    opacity: 0.9;
+    position: relative;
+}
+.content {
+    min-height: 250px;
+}
+footer {
+    min-height: 100px;
+    background: #e64d59;
+    margin: 50px 0 0 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#020000+0,e64d59+42,e64d59+100 */
+    background: rgb(2,0,0); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(2,0,0,1) 0%, rgba(230,77,89,1) 42%, rgba(230,77,89,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(2,0,0,1) 0%,rgba(230,77,89,1) 42%,rgba(230,77,89,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(2,0,0,1) 0%,rgba(230,77,89,1) 42%,rgba(230,77,89,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020000', endColorstr='#e64d59',GradientType=0 ); /* IE6-9 */
+}
+section {
+    margin: 30px 40px;
+}
+header .shadow {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,000000+100&0+35,0.9+100 */
+    background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(20,57,99,0) 35%, rgba(0,0,0,0.9) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(20,57,99,0) 35%,rgba(0,0,0,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(20,57,99,0) 35%,rgba(0,0,0,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#e6000000',GradientType=0 ); /* IE6-9 */
+    height: 140px;
+}
+/* Navigation */
+nav.bg-dark {
+    background-color: rgba(17, 10, 12, 0.89) !important;
+}
+nav {
+    max-height: 40px;
+    padding-left: 50px;
+}
+nav ul li {
+    margin: 10px;
+}
+.nav-link.active {
+    color: #000 !important;
+    background-color: #dac4bc;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#110a0c+0,dac4bc+41,dac4bc+100&0.1+0,1+100 */
+    background: -moz-linear-gradient(top,  rgba(17,10,12,0.1) 0%, rgba(218,196,188,0.47) 41%, rgba(218,196,188,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(17,10,12,0.1) 0%,rgba(218,196,188,0.47) 41%,rgba(218,196,188,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(17,10,12,0.1) 0%,rgba(218,196,188,0.47) 41%,rgba(218,196,188,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a110a0c', endColorstr='#dac4bc',GradientType=0 ); /* IE6-9 */
+}
+/* Page content */
+.btn-orng {
+    background-color: var(--colorOrng);
+    color: var(--colorBlck);
+}
+.underline {
+    border-bottom: 3px solid var(--colorBlck);
+    padding-bottom: 3px;
+}
+/* Posts */
+.post {
+    position: relative;
+    border-bottom: 4px solid var(--colorOrng);
+}
+.post-content {
+    position: relative;
+    max-height: 320px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.post img {
+    height: 170px;
+    display: inline-block;
+    margin: auto;
+}
+.post p, h4 {
+    text-indent: 20px;
+    text-align: left;
+}
+.post-content:before {
+    content:"";
+    display:block;
+    height:30px;
+    position:relative;
+    top:290px;
+    background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0), #dac4bc 75%)
+}
+.open-post {
+    position: absolute;
+    display: block;
+    height: 20px;
+    bottom: 5px;
+    right: 10px;
+}
+.open-post a {
+    color: var(--colorOrng);
+    text-decoration: none;
+    opacity: .7;
+}
+#public-date {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 20px;
+    opacity: .7;
+    background: url("../images/clock.png") no-repeat 5px center;
+    background-size: 1em;
+    padding-left: 25px;
+}
+
+/* Profile */
+.profile-info {
+    text-align: center;
+}
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--colorOrng);
+    overflow: hidden;
+    margin: auto;
+}
