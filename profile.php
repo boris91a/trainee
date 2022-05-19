@@ -1,50 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts</title>
-    <link rel="stylesheet" href="style/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-<header>
-    <div class="shadow"></div>
-</header>
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-light">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Main</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/login.html">Log In</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/registration.html">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/posts.html">Posts</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/profile.html">Profile</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<section class="breadcrumb">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item" aria-current="page">Main</li>
-            <li class="breadcrumb-item active" aria-current="page">Profile</li>
-        </ol>
-    </nav>
-</section>
-<section class="content">
+<?php
+$title = "Profile";
+$active['profile'] = " active";
+$content = <<<HEREDOC
         <div class="container">
             <div class="row">
-                <div class="col-12"><h2 class="underline">Profile</h2></div>
+                <div class="col-12"><h2 class="underline">$title</h2></div>
             </div>
             <div class="row mt-5">
                 <div class="col-2 text-center">
@@ -82,8 +42,6 @@
                 </div>
             </div>
         </div>
-</section>
-<footer></footer>
-<script src="js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+HEREDOC;
+require_once "layout/main.php";
+?>
