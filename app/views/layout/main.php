@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title><?=$title?></title>
-    <link rel="stylesheet" href="style/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="/style/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
 <header>
-<? require_once "header.php"; ?>
+    <div class="shadow"></div>
 </header>
-<? require_once "navigation.php"; ?>
+<? require_once "_navigation.php"; ?>
 <section class="breadcrumb">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -24,7 +24,7 @@
 <section class="content">
 <?=$content?>
 </section>
-<footer><? require_once "footer.php"; ?></footer>
+<footer></footer>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

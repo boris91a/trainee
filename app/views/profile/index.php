@@ -1,15 +1,15 @@
 <?php
 $title = "Profile";
 $active['profile'] = " active";
-$content = <<<HEREDOC
+?>
         <div class="container">
             <div class="row">
-                <div class="col-12"><h2 class="underline">$title</h2></div>
+                <div class="col-12"><h2 class="underline"><?=$title?></h2></div>
             </div>
             <div class="row mt-5">
                 <div class="col-2 text-center">
                     <div class="profile-info">
-                        <div class="avatar"><img class="img-fluid" src="images/avatar.png"></div>
+                        <div class="avatar"><img class="img-fluid" src="../../../images/avatar.png"></div>
                         <a href="#">Change</a>
                     </div>
                 </div>
@@ -42,6 +42,3 @@ $content = <<<HEREDOC
                 </div>
             </div>
         </div>
-HEREDOC;
-require_once "layout/main.php";
-?>
