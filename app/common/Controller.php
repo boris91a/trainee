@@ -6,9 +6,11 @@ abstract class Controller {
 
     protected $controller;
     protected $layout;
+    protected $config;
 
-    function __construct($layout = "Main"){
-        $this->layout = $layout;
+    function __construct($config){
+        $this->config = $config;
+        if(!empty($config['layout']))$this->layout = $config['layout'];
         $this->controller = $this->classname();
     }
 

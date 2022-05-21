@@ -37,7 +37,7 @@ class App {
             if(class_exists($path)){
                 $action = "action".$this->params['action'];
                 if(method_exists($path, $action)){
-                    $controller = new $path($this->config['layout']);
+                    $controller = new $path($this->config);
                     $controller->$action();
                 } else {
                     echo "Action not found";

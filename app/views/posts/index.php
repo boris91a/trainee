@@ -13,7 +13,7 @@ $active['posts'] = " active";
                     <div class="post">
                         <div id="public-date"><?=$date?></div>
                         <div class="post-content">
-                            <img src="images/<?=$picture?>" alt="Post pic">
+                            <img src="/images/<?=$picture?>" alt="Post pic">
                             <h4 class="mt-2"><?=$header?></h4>
                             <p><?=$p_content?></p>
                         </div>

@@ -1,17 +1,13 @@
 <?php
 namespace app\models;
 
-use app\common\Model;
+use app\common\MysqlModel;
 
-class Posts {
+class Posts extends MysqlModel {
 
-    protected $datafile;
+    protected function tablename(){
 
-    function __construct() {
-        $this->datafile = "app\data\posts.txt";
+        return "posts";
     }
 
-    public function getData() {
-        return unserialize(file_get_contents($this->datafile));
-    }
 }

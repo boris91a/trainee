@@ -10,7 +10,7 @@ class PostsController extends Controller{
     public function actionIndex(){
 
         $model = new Posts;
-        $posts = $model->getData();
+        $posts = $model->find()->all();
 
         $this->render('index',["posts" => $posts]);
     }
