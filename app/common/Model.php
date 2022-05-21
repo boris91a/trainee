@@ -1,15 +1,13 @@
 <?php
 namespace app\common;
 
-abstract class Model {
+Interface Model {
 
-    protected $connection;
-    protected $query;
-
-    abstract public function find();
-    abstract public function update($id, $params);
-    abstract public function delete($id);
-    abstract public function one();
-    abstract public function all();
+    public function find();
+    public function save();
+    public function update($id, $params);
+    public function delete($id);
+    public function all();
+    public function one();
 
 }

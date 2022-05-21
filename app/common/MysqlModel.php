@@ -4,9 +4,12 @@ namespace app\common;
 use app\common\Model;
 use app\common\Db;
 
-abstract class MysqlModel extends Model {
+abstract class MysqlModel implements Model{
 
     protected $prepare;
+    protected $connection;
+    protected $query;
+    protected $properties = [];
 
     abstract protected function tablename();
 
@@ -36,7 +39,7 @@ abstract class MysqlModel extends Model {
             if(!stripos($this->query, "WHERE")){
                 $this->query .= " WHERE ".$vars;
             } else {
-                $this->query .= "$operand".$vars;
+                $this->query .= $operand.$vars;
             }
         }
         return $this;
@@ -56,8 +59,9 @@ abstract class MysqlModel extends Model {
     public function one(){
         $this->query .= " LIMIT 1";
         $this->execute();
+        $this->properties = $this->prepare->fetchAll()[0];
 
-        return $this->prepare->fetchAll();
+        return $this;
     }
 
     protected function execute() {
@@ -94,5 +98,40 @@ abstract class MysqlModel extends Model {
         $this->query = $query;
 
         return $this;
+    }
+
+    public function __set($property, $value){
+        $this->properties[$property] = $value;
+    }
+
+    public function __get($property){
+        return $this->properties[$property];
+    }
+
+    public function __isset($property){
+        return isset($this->properties[$property]);
+    }
+
+    protected function insert($params){
+        $keys = " (".implode(", ",array_keys($params)).")";
+        $this->query = "INSERT INTO ".$this->tablename().$keys." VALUES (".implode(", ",array_map(function($e){return "'$e'";},$params)).")";
+    }
+
+    protected function refresh(){
+        $sur = $this->find()->where(['id'=>$this->id])->one();
+        $this->properties = array_merge($this->properties, $sur->properties);
+        unset($sur);
+    }
+
+    public function save(){
+        if(!empty($this->properties)){
+            $this->insert($this->properties);
+            if($this->execute()) {
+                $this->id = $this->connection->lastInsertId();
+                $this->refresh();
+                return true;
+            }
+        }
+        return false;
     }
 }
