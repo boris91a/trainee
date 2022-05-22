@@ -112,27 +112,42 @@ abstract class MysqlModel implements Model{
         return isset($this->properties[$property]);
     }
 
+    public function __unset($property){
+        unset($this->properties[$property]);
+    }
+
     protected function insert($params){
         $keys = " (".implode(", ",array_keys($params)).")";
         $this->query = "INSERT INTO ".$this->tablename().$keys." VALUES (".implode(", ",array_map(function($e){return "'$e'";},$params)).")";
+
+        return $this->execute();
     }
 
     protected function refresh(){
         $sur = $this->find()->where(['id'=>$this->id])->one();
-        $this->properties = array_merge($this->properties, $sur->properties);
+        $this->properties = $sur->properties;
         unset($sur);
     }
 
     public function save(){
         if(!empty($this->properties)){
-            $this->insert($this->properties);
-            if($this->execute()) {
-                $this->id = $this->connection->lastInsertId();
-                $this->refresh();
-                return true;
+            if(isset($this->id)){
+                if($this->update($this->id, $this->properties)){
+                    $this->refresh();
+                    return true;
+                }
+            } else {
+                if($this->insert($this->properties)) {
+                    $this->id = $this->connection->lastInsertId();
+                    $this->refresh();
+                    return true;
+                }
             }
         }
         return false;
+    }
+    public  function load($params = []){
+        $this->properties = $params;
     }
     public function getProperties(){
         return $this->properties;

@@ -16,7 +16,7 @@
             <a href="/registration" class="btn">Registration</a>
         </div>
         <?php else: ?>
-        <div class="avatar"><img src="/images/<?=$_SESSION['user']['avatar']?>" class="img-fluid"></div>
+        <img src="/uploads/<?=$_SESSION['user']['avatar']?>" class=" avatar img-fluid d-block">
         <a href="/profile" class="btn"><?=$_SESSION['user']['username']?></a>
         <br><a href="/logout" class="btn">Log Out</a>
         <?php endif; ?>

@@ -16,7 +16,6 @@ class MainController extends Controller {
             $this->redirect('/');
         } else {
             if (isset($_POST['submit'])) {
-
                 $user = $this->findOne($_POST['username']);
                 if($user->password == md5($_POST['password']) & $user->status != 0){
                     if(is_null($user->avatar)) $user->avatar = 'avatar.png';
@@ -39,7 +38,7 @@ class MainController extends Controller {
                 $user->username = $_POST['username'];
                 $user->password = md5($_POST['password']);
                 $user->email = $_POST['email'];
-                $user->verification_token = hash('md5',$user->username . $user->password); //vefification for email(Not active)
+                $user->verification_token = hash('md5',$user->username . $user->email); //vefification for email(Not active)
                 $user->status = 1; // Verification flag (Default NULL)
                 if($user->save()){
                     $this->redirect("/");

@@ -40,4 +40,8 @@ return [
         "controller" => "Profile",
         "action" => "Index",
     ],
+    "profile/change" => [
+        "controller" => "Profile",
+        "action" => "Change",
+    ],
 ];
