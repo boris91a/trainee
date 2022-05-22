@@ -9,5 +9,6 @@ Interface Model {
     public function delete($id);
     public function all();
     public function one();
+    public function getProperties();
 
 }

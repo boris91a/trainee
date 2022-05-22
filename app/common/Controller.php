@@ -2,6 +2,7 @@
 
 namespace app\common;
 
+
 abstract class Controller {
 
     protected $controller;
@@ -23,8 +24,9 @@ abstract class Controller {
         require $path."layout\\{$this->layout}.php";
     }
 
-    public function redirect($view, $params= []) {
-        $this->render($view, $params);
+    public function redirect($url) {
+        header('location:'. $url);
+        exit;
     }
 
     public function classname() {

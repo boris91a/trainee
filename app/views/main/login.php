@@ -21,7 +21,7 @@ $active['login'] = " active";
             </div>
             <div class="row mt-4">
                 <div class="col-12">
-                    <button type="submit" class="btn btn-orng">Log In</button>
+                    <button type="submit" name="submit" class="btn btn-orng">Log In</button>
                 </div>
             </div>
         </form>

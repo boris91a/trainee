@@ -134,4 +134,7 @@ abstract class MysqlModel implements Model{
         }
         return false;
     }
+    public function getProperties(){
+        return $this->properties;
+    }
 }

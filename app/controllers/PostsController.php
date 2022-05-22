@@ -15,11 +15,4 @@ class PostsController extends Controller{
         $this->render('index',["posts" => $posts]);
     }
 
-    private function findOne($id){
-        $model = new Posts;
-        $model->find()->where(['id'=>$id])->one();
-
-        return $model;
-    }
-
 }

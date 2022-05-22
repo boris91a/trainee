@@ -11,12 +11,12 @@ class App {
     function __construct($config = []){
        $routes =  require_once $config['routes'];
        foreach ($routes as $route => $params){
-           $this->loadRoutes($route, $params);
+           $this->loadRoute($route, $params);
        }
        $this->config = $config;
     }
 
-    public  function loadRoutes($route, $params){
+    public  function loadRoute($route, $params){
         $route = "@^{$route}$@";
         $this->routes[$route] = $params;
     }
@@ -32,6 +32,7 @@ class App {
     }
 
     public function run(){
+        //session_unset();
         if($this->router()){
             $path = "app\controllers\\".$this->params['controller']."Controller";
             if(class_exists($path)){

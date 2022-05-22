@@ -9,6 +9,18 @@
 <body>
 <header>
     <div class="shadow"></div>
+    <div id="user_container">
+        <?php if(!isset($_SESSION['user']['id'])): ?>
+        <div class="login">
+            <a href="/login" class="btn">Log in</a> /
+            <a href="/registration" class="btn">Registration</a>
+        </div>
+        <?php else: ?>
+        <div class="avatar"><img src="/images/<?=$_SESSION['user']['avatar']?>" class="img-fluid"></div>
+        <a href="/profile" class="btn"><?=$_SESSION['user']['username']?></a>
+        <br><a href="/logout" class="btn">Log Out</a>
+        <?php endif; ?>
+    </div>
 </header>
 <? require_once "_navigation.php"; ?>
 <section class="breadcrumb">

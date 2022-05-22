@@ -27,13 +27,13 @@ $active['registration'] = " active";
             </div>
             <div class="row mt-3">
                 <div class="col-md-4 col-sm-12">
-                    <label for="mail" class="form-label">Enter Email</label>
-                    <input class="form-control" type="email" id="mail" name="mail" value="" placeholder="Email">
+                    <label for="email" class="form-label">Enter Email</label>
+                    <input class="form-control" type="email" id="email" name="email" value="" placeholder="Email">
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-12">
-                    <button type="submit" class="btn btn-orng">Log In</button>
+                    <button type="submit" name="submit" class="btn btn-orng">Register</button>
                 </div>
             </div>
         </form>

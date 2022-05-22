@@ -133,3 +133,25 @@ nav ul li {
     overflow: hidden;
     margin: auto;
 }
+#user_container {
+    position: absolute;
+    display: block;
+    top: 40px;
+    right: 50px;
+    width: 200px;
+    max-height: 150px;
+    text-align: center;
+}
+#user_container .login {
+    padding-left: 3px;
+    background: url("../images/login.png") no-repeat 5px center;
+    background-size: 0.8em;
+}
+#user_container a {
+    padding: 3px;
+}
+#user_container .avatar {
+    text-align: center;
+    width: 70px;
+    height: 70px;
+}
